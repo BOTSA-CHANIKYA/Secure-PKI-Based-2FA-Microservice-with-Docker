@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  pki-2fa-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pki-2fa-service
+    environment:
+      PORT: 8081
+      SEED_API_URL: "https://eajeyq4r3zljoq4rpovy2nthda0vtjqf.lambda-url.ap-south-1.on.aws"
+      STUDENT_ID: "22P31A0555"
+      REPO_URL: "https://github.com/BOTSA-CHANIKYA/Secure-PKI-Based-2FA-Microservice-with-Docker"
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
