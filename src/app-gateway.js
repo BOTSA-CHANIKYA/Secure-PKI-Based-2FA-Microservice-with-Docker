@@ -20,8 +20,9 @@ app.get("/health", (req, res) => {
 });
 
 // Attach feature routes
-app.use("/api/otp", otpRoutes);
-app.use("/api/seed", seedRoutes);
+app.use("/", otpRoutes);
+app.use("/", seedRoutes);
+
 
 // Port from environment or default
 const PORT = process.env.PORT || 8081;
